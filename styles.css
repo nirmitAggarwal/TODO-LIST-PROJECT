@@ -1,64 +1,166 @@
+/* General Body Styling */
 body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-color: #f0f0f0;
+    font-family: 'Exo 2', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f9f4; /* Light greenish background for a fresh look */
 }
 
-.todo-container {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  text-align: center;
+/* Main Container Styling */
+.container {
+    max-width: 500px;
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background for content area */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    position: relative; /* For stacking context */
+    margin-top: 20px; /* Space from top of the viewport */
 }
 
-#todo-input {
-  width: calc(100% - 22px);
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+/* Title Section Styling */
+.title {
+    background-color: #ff6f61; /* Coral pink color */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
 }
 
-#add-button {
-  padding: 10px 20px;
-  border: none;
-  background-color: #28a745;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
+.title h1 {
+    margin: 0;
+    font-size: 28px;
 }
 
-#add-button:hover {
-  background-color: #218838;
+.title button {
+    background-color: #ffffff;
+    color: #ff6f61;
+    border: none;
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#todo-list {
-  list-style-type: none;
-  padding: 0;
+.title button:hover {
+    background-color: #fce4ec; /* Light pink for hover */
 }
 
-.todo-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
+/* Task List Styling */
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.todo-item.completed {
-  text-decoration: line-through;
-  color: #888;
+.reminder {
+    background-color: #ffffff; /* White background for each reminder */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    margin: 10px 0;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.todo-item button {
-  background: none;
-  border: none;
-  color: #dc3545;
-  cursor: pointer;
+.reminder .text {
+    flex-grow: 1;
+    margin-right: 15px;
+}
+
+.btn-check, .btn-delete {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-check {
+    background-color: #4caf50; /* Green for check button */
+}
+
+.btn-delete {
+    background-color: #f44336; /* Red for delete button */
+}
+
+.btn-check:hover {
+    background-color: #388e3c; /* Darker green for hover */
+}
+
+.btn-delete:hover {
+    background-color: #d32f2f; /* Darker red for hover */
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 400px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal input[type="text"], .modal input[type="time"], .modal button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modal button {
+    background-color: #ff6f61; /* Coral pink color */
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+}
+
+.modal button:hover {
+    background-color: #e64a19; /* Darker pink for hover */
+}
+.gap-tick{
+    width: 20px;
+    height: 20px;
 }
